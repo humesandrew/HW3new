@@ -1,6 +1,6 @@
 // Assignment Code
 
-// I worked with Micah and Guilliani//
+// I worked with my tutor, Micah, and Guilani//
 
 var generateBtn = document.querySelector("#generate");
 var finalPassword;
@@ -55,10 +55,15 @@ else if (hasUpperCase && hasLowerCase && hasCharacts && hasNumber) {
 else if (hasUpperCase && hasLowerCase && hasCharacts) {
   charactersEntered = uppercase.concat(lowercase, characts);
 }
+else if (hasUpperCase && hasLowerCase && hasNumber) {
+  charactersEntered = uppercase.concat(lowercase, numeric); 
+}
+else if (hasLowerCase && hasCharacts && hasNumber) {
+  charactersEntered = lowercase.concat(characts, numeric);
+}
 
 
-
-//selected 2 optiosn//
+//selected 2 options//
 else if (hasUpperCase && hasLowerCase) {
   charactersEntered = uppercase.concat(lowercase);
 }
