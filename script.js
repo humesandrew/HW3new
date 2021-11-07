@@ -1,10 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var generate = document.querySelector(generate)
-var uppercase = []
-var lowercase =[]
-var characts = []
-var number = []
+var generate = document.querySelector("generate");
+
+
+const uppercase = ["A", "B", "C", "D", "E", "F"]
+const lowercase =["a", "b", "c", "d", "e", "f"]
+const characts = ["!", "@", "#", "$", "%", "^"]
+const number = ["0", "1", "2", "3", "4", "5", "6"]
 
 
 function genPassword () {
@@ -14,7 +16,7 @@ if (Number.isNaN(length)) {
   return null;
 }
 if (length < 8 || length > 128) {
-  alert("Length is too short or longer than 128 characters.");
+  alert("Length is shorter than 8 or longer than 128 characters.");
   return null; 
 }
 
@@ -28,17 +30,47 @@ if (hasUpperCase === false && hasLowerCase === false && hasCharacts === false &&
   return null; 
 }
 
-var passwordchoices = {
+if (hasUpperCase === true && hasLowerCase === false && hasCharacts === false && hasNumber === false) {
+  alert("Your password will have Upper Case letters.");
+
+}
+
+if (hasUpperCase && hasLowerCase && hasCharacts === false && hasNumber === false) {
+  alert("Your password will have Upper Case and Lower Case letters.");
+}
+
+if (hasUpperCase && hasLowerCase && hasCharacts && hasNumber === false) {
+  alert("Your password will have Upper Case, Lower Case, and Characters.");
+}
+
+if (hasUpperCase && hasLowerCase && hasCharacts && hasNumber) {
+  alert("Your password will have Upper Case, Lower Case, Characters, and Numbers.");
+
+}
+
+
+var choices = {
   length: length,
-  hasUpperCase: hasUppercase,
-  hasLowerCase: hasUppercase,
+  hasUpperCase: hasUpperCase,
+  hasLowerCase: hasLowerCase,
   hasCharacts: hasCharacts,
   hasNumber: hasNumber,
 }; 
-return passwordchoices;
+return choices;
+}
+//Ignoring the parameter choices for now////
+
+var password = "";
+for (var i = 0; i <=length; i++) 
+{var randomNumber = Math.floor(Math.random() * uppercase.length)
+password += uppercase.substring(randomNumber, randomNumber +1);
 }
 
 function getRandom() {
+  
+
+
+
 
 }
 function generatePassword() {
